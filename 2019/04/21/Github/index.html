@@ -17,14 +17,17 @@
   
   <title>Github | 李杰</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Github">
 <meta property="og:url" content="http://yoursite.com/2019/04/21/Github/index.html">
 <meta property="og:site_name" content="李杰">
+<meta property="og:description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-04-21T06:24:52.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github">
+<meta name="twitter:description" content="document.querySelectorAll(&apos;.github-emoji&apos;)           .forEach(el =&amp;gt; {             if (!el.dataset.src) { return; }             const img = document.createElement(&apos;img&apos;);             img.style">
   
     <link rel="alternate" href="/atom.xml" title="李杰" type="application/atom+xml">
   
@@ -157,7 +160,25 @@
             
         </div>
         <div class="content" style="overflow: auto">
-            
+            <script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
         </div>
         <div class="post-reply">
             
